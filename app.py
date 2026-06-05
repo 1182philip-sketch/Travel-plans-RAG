@@ -202,11 +202,16 @@ h1, h2, h3 {
 }
 
 /* ── 입력 필드 글자색 (Streamlit Cloud 흰 글씨 버그 방지) ── */
-input, textarea, [data-testid="stTextInput"] input,
-[data-testid="stChatInput"] textarea,
-.stTextInput input, div[data-baseweb="input"] input,
-div[data-baseweb="textarea"] textarea {
+input, textarea {
     color: #3A2E00 !important;
+    -webkit-text-fill-color: #3A2E00 !important;
+}
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea,
+[data-testid="stTextInput"] input,
+[data-testid="stChatInput"] textarea {
+    color: #3A2E00 !important;
+    -webkit-text-fill-color: #3A2E00 !important;
 }
 
 /* ── 채팅 본문 글자 크기 ── */
