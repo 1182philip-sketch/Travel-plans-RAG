@@ -201,22 +201,26 @@ h1, h2, h3 {
     color: #3A2E00;
 }
 
-/* ── 입력 필드 글자색 (다크모드 흰 글씨 방지) ── */
-:root {
-    color-scheme: light !important;
-}
-input, textarea {
-    color-scheme: light !important;
-    color: #3A2E00 !important;
-    -webkit-text-fill-color: #3A2E00 !important;
-}
+/* ── 입력 필드 글자색 (다크모드/브라우저 재정의 완전 차단) ── */
+input, textarea,
 [data-baseweb="input"] input,
 [data-baseweb="textarea"] textarea,
 [data-testid="stTextInput"] input,
 [data-testid="stChatInput"] textarea {
-    color-scheme: light !important;
     color: #3A2E00 !important;
     -webkit-text-fill-color: #3A2E00 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #FFF9E6 inset !important;
+    background-color: #FFF9E6 !important;
+}
+@media (prefers-color-scheme: dark) {
+    input, textarea,
+    [data-baseweb="input"] input,
+    [data-baseweb="textarea"] textarea {
+        color: #3A2E00 !important;
+        -webkit-text-fill-color: #3A2E00 !important;
+        -webkit-box-shadow: 0 0 0px 1000px #FFF9E6 inset !important;
+        background-color: #FFF9E6 !important;
+    }
 }
 
 /* ── 채팅 본문 글자 크기 ── */
