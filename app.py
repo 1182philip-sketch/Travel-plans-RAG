@@ -201,8 +201,12 @@ h1, h2, h3 {
     color: #3A2E00;
 }
 
-/* ── 입력 필드 글자색 (Streamlit Cloud 흰 글씨 버그 방지) ── */
+/* ── 입력 필드 글자색 (다크모드 흰 글씨 방지) ── */
+:root {
+    color-scheme: light !important;
+}
 input, textarea {
+    color-scheme: light !important;
     color: #3A2E00 !important;
     -webkit-text-fill-color: #3A2E00 !important;
 }
@@ -210,6 +214,7 @@ input, textarea {
 [data-baseweb="textarea"] textarea,
 [data-testid="stTextInput"] input,
 [data-testid="stChatInput"] textarea {
+    color-scheme: light !important;
     color: #3A2E00 !important;
     -webkit-text-fill-color: #3A2E00 !important;
 }
