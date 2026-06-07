@@ -81,9 +81,49 @@ html, body, [class*="css"] {
     font-size: 20px !important;
 }
 
-/* ── 상단 헤더 바 숨기기 ── */
+/* ── 상단 헤더: 사이드바 복구 버튼은 살리고 배경만 투명 처리 ── */
 [data-testid="stHeader"] {
-    display: none;
+    display: block !important;
+    height: 3rem !important;
+    background: transparent !important;
+    color: #3A2E00 !important;
+    pointer-events: none;
+}
+[data-testid="stHeader"] * {
+    color: #3A2E00 !important;
+}
+[data-testid="stHeader"] button,
+[data-testid="collapsedControl"] button,
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapsedControl"] {
+    pointer-events: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    border-radius: 999px !important;
+    background-color: #FFF9E6 !important;
+    border: 2px solid #FFE033 !important;
+    box-shadow: 0 2px 8px rgba(58, 46, 0, 0.12) !important;
+    color: #3A2E00 !important;
+}
+[data-testid="stHeader"] button:hover,
+[data-testid="collapsedControl"] button:hover,
+[data-testid="stSidebarCollapseButton"]:hover,
+[data-testid="stSidebarCollapsedControl"]:hover {
+    background-color: #FFE033 !important;
+    color: #3A2E00 !important;
+}
+[data-testid="stHeader"] svg,
+[data-testid="collapsedControl"] svg,
+[data-testid="stSidebarCollapseButton"] svg,
+[data-testid="stSidebarCollapsedControl"] svg {
+    color: #3A2E00 !important;
+    fill: #3A2E00 !important;
+    stroke: #3A2E00 !important;
 }
 
 /* ── 사이드바 ── */
