@@ -632,7 +632,11 @@ def load_vectorstore():
     embeddings = OpenAIEmbeddings()
 
     if os.path.exists(DB_DIR) and len(os.listdir(DB_DIR)) > 0:
-        return Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
+        try:
+            return Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
+        except Exception:
+            import shutil
+            shutil.rmtree(DB_DIR)
 
     docs = []
     splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
